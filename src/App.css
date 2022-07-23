@@ -1,0 +1,83 @@
+*,*::after,*::before{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+}
+
+.calc-body{
+  background-color: wheat;
+  color: black;
+  width: 350px;
+  height: 510px ;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.calc-body .result-screen{
+  display: flex;
+}
+
+.calc-body .result-screen .opearionSign{
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+}
+
+.calc-body .result-screen .result-screen-right{
+  width: 100%;
+}
+
+.calc-body .result-screen .re{
+  height: 55px;
+  text-align: right;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.calc-body .re.previous{
+  font-size: 25px;
+  color: #574c4c;
+}
+
+.calc-body .keys-screen{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr
+}
+
+.calc-body .keys-screen button{
+  height: 80px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+}
+
+.calc-body .keys-screen button:hover{
+  background-color: #817070;
+}
+
+.calc-body .keys-screen .op{
+  background-color: #5f5f5f;
+}
+
+.calc-body .keys-screen .op.result{
+  grid-column:2 span;
+}
