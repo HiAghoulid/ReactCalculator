@@ -7,10 +7,6 @@ export default function CalculatorBody() {
     const [previusValue,setPreviusValue] = useState(0)
     const [opKey,setOpKey] = useState('')
 
-    // console.log(keyInput)
-    // console.log(previusValue)
-    // console.log(opKey)
-
     function operation(key){
         if(key !== '=' ){
             switch (key){
@@ -25,6 +21,8 @@ export default function CalculatorBody() {
                 default :
                     setKeyInput('')
                     setOpKey(key)
+                    console.log('current : '+keyInput)
+                    console.log('prev : '+previusValue)
             }
         }else{
             switch(opKey){
@@ -48,6 +46,8 @@ export default function CalculatorBody() {
                     setPreviusValue(parseInt(previusValue)% parseInt(keyInput))
                     setKeyInput('')
                     break;
+                default :
+                    break
             }
         }
     }
@@ -57,6 +57,8 @@ export default function CalculatorBody() {
             operation(key)
         }else{
             if(key ==='.' && keyInput.includes('.'))
+                return
+            if(key === '.' && keyInput ==='')
                 return
             setKeyInput(prev => (`${prev}${key}`))
         }
